@@ -11,46 +11,6 @@ var taskArr=[]; //stores array of tasks created during post request
 //thats why I made it global array
 
 app.get("/", function(req, res){
-    /*
-    var month= today.getMonth(); // return array index: 0->jan, 11->dec
-    var todayDate= today.getDate(); //return actual date [1-31]
-    var year= today.getFullYear(); //return acyual year
-    var hour= today.getHours();  // return actual hour in 24 hour format
-    var min= today.getMinutes(); // return actual min
-    var sec= today.getSeconds(); // return actual sec
-    var day= today.getDay(); // raturn array index: // Sunday - Saturday : 0 - 6
-    console.log("month: "+month);
-    console.log("date: "+todayDate);
-    console.log("Year: "+year);
-    console.log("hour: "+hour);
-    console.log("min: "+min);
-    console.log("sec: "+sec);
-    console.log("day: "+day);
-
-    ------------Another Way------------
-    var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-
-    console.log(today.toLocaleDateString("en-US")); // 9/17/2016
-    console.log(today.toLocaleDateString("en-US", options)); // Saturday, September 17, 2016
-    console.log(today.toLocaleDateString("hi-IN", options)); // शनिवार, 17 सितंबर 2016
-    */
-
-    /*
-    var DayArray=["Sunday", "Monday", "Tuesday", "Wednesday", "Thrusday", "Friday", "Saturaday"];
-    var todayDay=DayArray[today.getDay()];
-
-    //now depending on today:, I want my HTML(ejs) to change TypeOfDay & TodaysDay
-    if(today.getDay()===6 || today.getDate()===0){
-        day= "Weekend";
-        //res.send("Its weekend");
-        res.render("list", {TypeOfDay: day, TodaysDay: todayDay});
-    }
-    else{
-        day= "Weekday"
-        //res.send("oh fuck! its a work day");
-        res.render("list", {TypeOfDay: day, TodaysDay: todayDay});
-    }
-    */
 
     let localDayDescription;
 
