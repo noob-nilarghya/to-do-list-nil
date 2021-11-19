@@ -1,0 +1,75 @@
+<!-- This is a "ejs" file! ejs module will render this file (template) -->
+<!-- This .ejs file only accept HTML filre -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="Image/homework.ico">
+</head>
+<body>
+
+    <div class="box" id="heading">
+        <!-- Please read index.html side by side -->
+        <h1> <%= localDayDescription %> </h1>
+    </div>
+
+    <div class="box">
+        <!-- default 3 tasks -->
+        <!--
+        <li>Buy Food</li>
+        <li>Cook Food</li>
+        <li>Eat Food</li>
+        -->
+        <!-- <li> <%= newToDo %> </li> -->
+    
+        <% for(var i=0; i<newToDo.length; i++){ %>
+            <div class="item">
+                <input type="checkbox">
+                <p> <%= newToDo[i] %> </p>
+            </div>
+        <% } %>
+
+        
+
+
+        <!-- for adding new task, we use post request -->
+
+        <form class="item" action="/" method="post">
+            <input type="text" name="newTask" placeholder="Enter task here" autocomplete="off">
+            <button class="add" type="submit">+</button>
+        </form>
+
+        <!-- Basically, we clicked button (post req): send data from template to server
+        At line 16, 25: getting processed data from server to template. (static template with dynamic content) 
+        -->
+
+    </div>
+
+    <div class="reset">
+        <form  action="/reset" method="post">
+            <button class="resetBtn" type="submit"> RESET </button>
+        </form>
+    </div>
+
+    <div class="footer">
+        <a href="https://www.facebook.com/profile.php?id=100005255746624" target="_blank"> <img class="fb" src="Image/facebook.png" alt=""></a>
+        <a href="https://github.com/noob-nilarghya" target="_blank"><img class="git" src="Image/github.png" alt=""></a>
+        <a href="https://www.linkedin.com/in/nilarghya-roy-6a7637201/" target="_blank"><img class="in" src="Image/linkedin (1).png" alt=""></a>
+        <p class="copy"> © 2020-24 Shovan Kr. Roy | Jhumpa Roy</p>
+        <p class="love">Made with 💖 by NIL</p>
+    </div>
+
+</body>
+</html>
+
+
+<!--
+Let say we want a sub-page named "Work" exactly same as this ToDo list, then we can use EJS to replicate the same content to other pages (TEMPLATE COPY)
+Also let say our website have lots of pages different from each other but, we want our "header" & "footer" to be same for all pages, (LAYOUT COPY)
+Then also we can use EJS to do so. ||     SEE VIDEO (EJS folder of this directory)        -->
